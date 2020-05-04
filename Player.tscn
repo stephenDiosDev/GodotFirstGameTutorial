@@ -37,3 +37,4 @@ shape = SubResource( 1 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "right"
+[connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
