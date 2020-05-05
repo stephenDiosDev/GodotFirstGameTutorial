@@ -44,7 +44,7 @@ func _process(delta):
 		$AnimatedSprite.flip_v = velocity.y > 0
 
 
-func _on_Player_area_entered(area):
+func _on_Player_body_entered(area):
 	hide()
 	emit_signal("hit")
 	$CollisionShape2D.set_deferred("disabled", true)

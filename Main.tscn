@@ -14,6 +14,13 @@ _data = {
 script = ExtResource( 2 )
 Mob = ExtResource( 3 )
 
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 483.0
+margin_bottom = 723.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
 [node name="MobTimer" type="Timer" parent="."]
@@ -34,6 +41,7 @@ curve = SubResource( 1 )
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
+[connection signal="body_entered" from="Player" to="." method="_on_Player_body_entered"]
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
